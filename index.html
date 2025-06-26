@@ -51,14 +51,18 @@
   overflow-y: auto;
   background-color: #000;
 }
-    }
-    #particles-js {
-      position: fixed;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-      background: radial-gradient(ellipse at center, #0f0f1a 0%, #000000 100%);
-    }
+   #particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* ✅ Assure qu'il reste derrière tout */
+  background: radial-gradient(ellipse at center, #0f0f1a 0%, #000000 100%);
+  pointer-events: none; /* ✅ Empêche d'interférer avec les clics */
+}
    .container {
   display: flex;
   flex-direction: row;
