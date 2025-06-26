@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Esprit Synthétique</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet" />
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Orbitron', sans-serif;
+      color: #ffffff;
+      overflow: hidden;
+      background-color: #000;
+    }
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      background: radial-gradient(ellipse at center, #0f0f1a 0%, #000000 100%);
+    }
+    .container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      padding: 0 5%;
+      position: relative;
+      z-index: 1;
+    }
+    .avatar {
+      flex: 1;
+      text-align: center;
+    }
+    .avatar img {
+      max-height: 80vh;
+      border-radius: 10px;
+      box-shadow: 0 0 20px #00f0ff;
+    }
+    .text {
+      flex: 1;
+      padding: 20px;
+      animation: fadeInUp 2s ease-out;
+    }
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(40px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    h1 {
+      font-size: 3em;
+      color: #00f0ff;
+    }
+    p {
+      font-size: 1.2em;
+      line-height: 1.6;
+      color: #cccccc;
+    }
+    .button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 24px;
+      background: #00f0ff;
+      color: #000;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 8px;
+      box-shadow: 0 0 15px #00f0ff;
+      transition: 0.3s ease;
+    }
+    .button:hover {
+      background: #00b0cc;
+      box-shadow: 0 0 25px #00f0ff;
+    }
+  </style>
+</head>
+<body>
+  <div id="particles-js"></div>
+  <div class="container">
+    <div class="avatar">
+      <img src="avatar.jpg" alt="Esprit Synthétique Avatar">
+    </div>
+    <div class="text">
+      <h1>ESPRIT SYNTHÉTIQUE</h1>
+      <p>
+        L’avenir n’attend plus…<br/>
+        Une révolution silencieuse s'opère chaque jour sous nos yeux : celle des intelligences artificielles, des mondes numériques et des frontières technologiques effacées.<br/><br/>
+        Plongez dans un univers où la science devient expérience, et où la curiosité est notre moteur principal.<br/><br/>
+        Prêt à découvrir ce que demain vous réserve ?
+      </p>
+      <a href="https://www.youtube.com/@EspritSynthétique" class="button" target="_blank">Explorer la chaîne</a>
+    </div>
+  </div>
+
+  <audio autoplay loop>
+    <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_59f2c18374.mp3" type="audio/mpeg">
+    Votre navigateur ne supporte pas l'audio HTML5.
+  </audio>
+
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": {
+          "value": 100,
+          "density": { "enable": true, "value_area": 800 }
+        },
+        "color": { "value": "#00f0ff" },
+        "shape": {
+          "type": "circle",
+          "stroke": { "width": 0, "color": "#000000" }
+        },
+        "opacity": {
+          "value": 0.5,
+          "random": true,
+          "anim": { "enable": false }
+        },
+        "size": {
+          "value": 3,
+          "random": true,
+          "anim": { "enable": false }
+        },
+        "line_linked": {
+          "enable": true,
+          "distance": 150,
+          "color": "#00f0ff",
+          "opacity": 0.4,
+          "width": 1
+        },
+        "move": {
+          "enable": true,
+          "speed": 2,
+          "direction": "none",
+          "random": false,
+          "straight": false,
+          "out_mode": "out",
+          "bounce": false
+        }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+          "onhover": { "enable": true, "mode": "grab" },
+          "onclick": { "enable": true, "mode": "push" },
+          "resize": true
+        },
+        "modes": {
+          "grab": { "distance": 140, "line_linked": { "opacity": 1 } },
+          "push": { "particles_nb": 4 }
+        }
+      },
+      "retina_detect": true
+    });
+  </script>
+</body>
+</html>
