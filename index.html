@@ -35222,13 +35222,7 @@ function getNewMatchesForLinks(page, nextMatches, currentMatches, manifest, loca
     return match.route.id !== currentMatches[index].route.id;
   };
   let matchPathChanged = (match, index) => {
-    return (
-      // param change, /users/123 -> /users/456
-      currentMatches[index].pathname !== match.pathname ||
-      // splat param changed, which is not present in match.path
-      // e.g. /files/images/avatar.jpg -> files/finances.xls
-      currentMatches[index].route.path?.endsWith("*") && currentMatches[index].params["*"] !== match.params["*"]
-    );
+    return false;
   };
   if (mode === "assets") {
     return nextMatches.filter((match, index) => isNew(match, index) || matchPathChanged(match, index));
